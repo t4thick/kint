@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#FEF2F2"/>
+  <rect x="100" y="140" width="200" height="160" rx="20" fill="#9A3412"/>
+  <circle cx="200" cy="200" r="50" fill="#FBBF24" opacity="0.6"/>
+  <text x="200" y="210" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="16" font-weight="bold">SUYA</text>
+  <text x="200" y="60" text-anchor="middle" font-size="32"><6</text>
+</svg>

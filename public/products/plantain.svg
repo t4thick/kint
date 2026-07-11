@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#FEFCE8"/>
+  <rect x="90" y="160" width="220" height="120" rx="8" fill="#CA8A04"/>
+  <ellipse cx="140" cy="200" rx="25" ry="15" fill="#FDE047" transform="rotate(-20 140 200)"/>
+  <ellipse cx="200" cy="195" rx="25" ry="15" fill="#FACC15"/>
+  <ellipse cx="260" cy="205" rx="25" ry="15" fill="#EAB308" transform="rotate(15 260 205)"/>
+  <text x="200" y="310" text-anchor="middle" fill="#713F12" font-family="system-ui,sans-serif" font-size="14" font-weight="600">PLANTAIN CHIPS</text>
+  <text x="200" y="80" text-anchor="middle" font-size="32"><L</text>
+</svg>
