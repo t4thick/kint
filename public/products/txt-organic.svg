@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#F0FDF4"/>
+  <circle cx="200" cy="200" r="120" fill="#40916C" opacity="0.2"/>
+  <rect x="120" y="130" width="160" height="180" rx="16" fill="#40916C"/>
+  <text x="200" y="210" text-anchor="middle" fill="white" font-family="Georgia,serif" font-size="24" font-weight="bold">TXT</text>
+  <text x="200" y="240" text-anchor="middle" fill="#D4A017" font-family="system-ui,sans-serif" font-size="12">ORGANIC</text>
+  <path d="M160 100 L200 60 L240 100" stroke="#40916C" stroke-width="3" fill="none"/>
+  <text x="200" y="85" text-anchor="middle" font-size="20"><?</text>
+</svg>

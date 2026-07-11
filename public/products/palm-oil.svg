@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#FFFBEB"/>
+  <rect x="140" y="60" width="120" height="280" rx="60" fill="#B45309"/>
+  <ellipse cx="200" cy="80" rx="40" ry="15" fill="#D97706"/>
+  <rect x="155" y="120" width="90" height="180" rx="8" fill="#92400E" opacity="0.5"/>
+  <text x="200" y="370" text-anchor="middle" fill="#92400E" font-family="system-ui,sans-serif" font-size="12" font-weight="600">PALM OIL</text>
+</svg>
