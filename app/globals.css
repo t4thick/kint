@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf8f5;
-  --foreground: #1a1a1a;
-  --brand-green: #1b4332;
-  --brand-green-light: #2d6a4f;
-  --brand-green-dark: #081c15;
-  --brand-gold: #d4a017;
-  --brand-gold-light: #f0c75e;
-  --brand-terracotta: #c45c26;
-  --brand-cream: #fdf6e3;
+  --background: #f4f1eb;
+  --foreground: #0f1410;
+  --brand-green: #0d3b2e;
+  --brand-green-light: #1a5c44;
+  --brand-green-dark: #061f17;
+  --brand-gold: #e8a317;
+  --brand-gold-light: #f5c842;
+  --brand-terracotta: #d4521e;
+  --brand-cream: #faf6ee;
   --brand-surface: #ffffff;
-  --brand-muted: #6b7280;
-  --brand-border: #e8e2d9;
+  --brand-muted: #5c6358;
+  --brand-border: #ddd5c8;
+  --brand-walmart: #0071dc;
+  --shadow-soft: 0 4px 24px -4px rgba(13, 59, 46, 0.12);
+  --shadow-card: 0 8px 32px -8px rgba(13, 59, 46, 0.18);
+  --shadow-float: 0 20px 50px -12px rgba(13, 59, 46, 0.25);
 }
 
 @theme inline {
@@ -28,6 +32,7 @@
   --color-brand-surface: var(--brand-surface);
   --color-brand-muted: var(--brand-muted);
   --color-brand-border: var(--brand-border);
+  --color-brand-walmart: var(--brand-walmart);
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-fraunces);
 }
@@ -51,42 +56,122 @@ body {
   font-family: var(--font-fraunces), Georgia, serif;
 }
 
-/* Fast tap targets for mobile */
 @media (max-width: 768px) {
   button, a {
     -webkit-tap-highlight-color: transparent;
   }
 }
 
-/* Subtle pattern for hero sections */
-.pattern-kente {
-  background-image:
-    linear-gradient(135deg, rgba(212, 160, 23, 0.06) 25%, transparent 25%),
-    linear-gradient(225deg, rgba(212, 160, 23, 0.06) 25%, transparent 25%),
-    linear-gradient(45deg, rgba(212, 160, 23, 0.06) 25%, transparent 25%),
-    linear-gradient(315deg, rgba(212, 160, 23, 0.06) 25%, transparent 25%);
-  background-size: 20px 20px;
+/* Kente-inspired accent stripe */
+.kente-stripe {
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--brand-gold) 0px,
+    var(--brand-gold) 12px,
+    var(--brand-terracotta) 12px,
+    var(--brand-terracotta) 24px,
+    var(--brand-green) 24px,
+    var(--brand-green) 36px,
+    #1a5c44 36px,
+    #1a5c44 48px
+  );
 }
 
-/* Skeleton shimmer */
+.pattern-kente {
+  background-image:
+    linear-gradient(135deg, rgba(232, 163, 23, 0.08) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(232, 163, 23, 0.08) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(232, 163, 23, 0.08) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(232, 163, 23, 0.08) 25%, transparent 25%);
+  background-size: 16px 16px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-dark {
+  background: rgba(6, 31, 23, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.card-shine:hover::after {
+  transform: translateX(100%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
 
 .skeleton {
-  background: linear-gradient(90deg, #f0ebe3 25%, #faf8f5 50%, #f0ebe3 75%);
+  background: linear-gradient(90deg, #ebe4d8 25%, #f4f1eb 50%, #ebe4d8 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-::-webkit-scrollbar-track {
-  background: transparent;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--brand-border);
