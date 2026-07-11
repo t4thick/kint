@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#FAFAF5"/>
+  <rect x="100" y="120" width="200" height="180" rx="8" fill="#F5F5DC" stroke="#D4D4AA" stroke-width="2"/>
+  <text x="200" y="200" text-anchor="middle" fill="#78716C" font-family="system-ui,sans-serif" font-size="20" font-weight="bold">FUFU</text>
+  <text x="200" y="230" text-anchor="middle" fill="#A8A29E" font-family="system-ui,sans-serif" font-size="12">INSTANT MIX</text>
+  <text x="200" y="70" text-anchor="middle" font-size="32">>c</text>
+</svg>

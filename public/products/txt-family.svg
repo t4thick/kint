@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#FDF6E3"/>
+  <rect x="60" y="100" width="280" height="220" rx="20" fill="#2D6A4F"/>
+  <rect x="80" y="120" width="120" height="180" rx="8" fill="#1B4332"/>
+  <rect x="210" y="120" width="120" height="180" rx="8" fill="#1B4332"/>
+  <text x="140" y="210" text-anchor="middle" fill="#D4A017" font-family="Georgia,serif" font-size="20" font-weight="bold">TXT</text>
+  <text x="270" y="210" text-anchor="middle" fill="#D4A017" font-family="Georgia,serif" font-size="20" font-weight="bold">TXT</text>
+  <text x="200" y="60" text-anchor="middle" fill="#1B4332" font-family="system-ui,sans-serif" font-size="16" font-weight="600">FAMILY PACK</text>
+</svg>
