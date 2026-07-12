@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
-  <rect width="400" height="400" fill="#F0FDF4"/>
-  <circle cx="200" cy="200" r="120" fill="#40916C" opacity="0.2"/>
-  <rect x="120" y="130" width="160" height="180" rx="16" fill="#40916C"/>
-  <text x="200" y="210" text-anchor="middle" fill="white" font-family="Georgia,serif" font-size="24" font-weight="bold">TXT</text>
-  <text x="200" y="240" text-anchor="middle" fill="#D4A017" font-family="system-ui,sans-serif" font-size="12">ORGANIC</text>
-  <path d="M160 100 L200 60 L240 100" stroke="#40916C" stroke-width="3" fill="none"/>
-  <text x="200" y="85" text-anchor="middle" font-size="20"><?</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9f8f6"/>
+      <stop offset="1" stop-color="#f0ede8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="175" r="100" fill="#3d8b6e" opacity="0.08"/>
+  <rect x="115" y="105" width="170" height="190" rx="24" fill="#3d8b6e" opacity="0.14"/>
+  <rect x="135" y="125" width="130" height="150" rx="16" fill="#3d8b6e" opacity="0.22"/>
+  <text x="200" y="328" text-anchor="middle" fill="#78716c" font-family="system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="0.06em">ORGANIC SELECT</text>
+  
 </svg>

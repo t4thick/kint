@@ -3,8 +3,9 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ProductGrid } from "@/components/shop/product-grid";
+import { CategoryIcon } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
-import { CATEGORY_ICONS, CATEGORY_LABELS } from "@/lib/constants";
+import { CATEGORY_LABELS } from "@/lib/constants";
 import { products } from "@/lib/data/products";
 import type { ProductCategory } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -37,7 +38,7 @@ export function ShopClient() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12">
       <div className="mb-8">
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-brand-green">
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-foreground">
           Shop All TXT Products
         </h1>
         <p className="text-brand-muted mt-2">
@@ -63,7 +64,7 @@ export function ShopClient() {
                     "px-3 py-2 rounded-xl text-sm font-medium transition-colors text-left",
                     !category
                       ? "bg-brand-green text-white"
-                      : "text-brand-muted hover:bg-brand-green/5"
+                      : "text-brand-muted hover:bg-brand-cream hover:text-foreground"
                   )}
                 >
                   All Products
@@ -76,10 +77,10 @@ export function ShopClient() {
                       "px-3 py-2 rounded-xl text-sm font-medium transition-colors text-left flex items-center gap-2",
                       category === slug
                         ? "bg-brand-green text-white"
-                        : "text-brand-muted hover:bg-brand-green/5"
+                        : "text-brand-muted hover:bg-brand-cream hover:text-foreground"
                     )}
                   >
-                    <span>{CATEGORY_ICONS[slug]}</span>
+                    <CategoryIcon category={slug} className="h-4 w-4 shrink-0" />
                     {label}
                   </button>
                 ))}

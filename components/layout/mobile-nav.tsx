@@ -10,7 +10,7 @@ const tabs = [
     href: "/",
     label: "Home",
     icon: (active: boolean) => (
-      <svg className="h-5 w-5" fill={active ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor" strokeWidth={active ? 0 : 2}>
+      <svg className="h-5 w-5" fill={active ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor" strokeWidth={active ? 0 : 1.75}>
         {active ? (
           <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
         ) : (
@@ -22,27 +22,29 @@ const tabs = [
   {
     href: "/shop",
     label: "Shop",
-    icon: (active: boolean) => (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={active ? 2.5 : 2}>
+    icon: () => (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
       </svg>
     ),
   },
   {
     href: "/cart",
-    label: "Cart",
-    icon: (active: boolean) => (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={active ? 2.5 : 2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+    label: "Bag",
+    icon: () => (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l-1 12H6L5 9z" />
       </svg>
     ),
   },
   {
     href: "/delivery",
     label: "Delivery",
-    icon: (active: boolean) => (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={active ? 2.5 : 2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10m0 0a2 2 0 104 0m-4 0a2 2 0 114 0m6-6h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-2a2 2 0 104 0m-4 0a2 2 0 114 0" />
+    icon: () => (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 17h8M3 9h11v8H3V9zm11 0h3l3 4v4h-6V9z" />
+        <circle cx="7" cy="17" r="2" />
+        <circle cx="17" cy="17" r="2" />
       </svg>
     ),
   },
@@ -55,8 +57,8 @@ export function MobileNav() {
   if (pathname.startsWith("/admin")) return null;
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-brand-surface/95 backdrop-blur-md border-t border-brand-border safe-area-pb">
-      <div className="flex items-center justify-around h-16 px-2">
+    <div className="md:hidden fixed bottom-5 left-4 right-4 z-50 flex items-center gap-2.5">
+      <nav className="flex flex-1 items-center justify-around h-[3.25rem] rounded-full bg-[#1c1917]/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35)] px-1">
         {tabs.map((tab) => {
           const active = tab.href === "/" ? pathname === "/" : pathname.startsWith(tab.href);
           return (
@@ -64,21 +66,33 @@ export function MobileNav() {
               key={tab.href}
               href={tab.href}
               className={cn(
-                "flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl transition-colors relative",
-                active ? "text-brand-green" : "text-brand-muted"
+                "relative flex flex-col items-center justify-center gap-0.5 min-w-[3.5rem] h-[2.6rem] rounded-full transition-all duration-200",
+                active
+                  ? "bg-white text-[#1c1917]"
+                  : "text-white/55 hover:text-white/80"
               )}
             >
               {tab.icon(active)}
-              <span className="text-[10px] font-medium">{tab.label}</span>
+              <span className="text-[9px] font-medium leading-none">{tab.label}</span>
               {tab.href === "/cart" && itemCount > 0 && (
-                <span className="absolute top-0 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-terracotta text-[8px] font-bold text-white">
-                  {itemCount}
+                <span className="absolute top-0.5 right-2 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-brand-green text-[7px] font-bold text-white">
+                  {itemCount > 9 ? "9+" : itemCount}
                 </span>
               )}
             </Link>
           );
         })}
-      </div>
-    </nav>
+      </nav>
+
+      <Link
+        href="/shop?search="
+        className="flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center rounded-full bg-[#1c1917]/90 backdrop-blur-xl border border-white/10 text-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.35)] hover:text-white transition-colors"
+        aria-label="Search"
+      >
+        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </Link>
+    </div>
   );
 }

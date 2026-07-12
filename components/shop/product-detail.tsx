@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { IconStore, IconTruck } from "@/components/ui/icons";
 import { useCart } from "@/lib/cart-context";
 import { CATEGORY_LABELS } from "@/lib/constants";
 import type { Product } from "@/lib/types";
@@ -23,7 +24,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
   return (
     <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-      <div className="relative aspect-square rounded-3xl overflow-hidden bg-brand-cream border border-brand-border">
+      <div className="relative aspect-square rounded-2xl overflow-hidden bg-brand-cream shadow-card">
         <Image
           src={product.image}
           alt={product.name}
@@ -33,7 +34,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
           className="object-cover"
         />
         {discount && (
-          <span className="absolute top-4 left-4 rounded-full bg-brand-terracotta px-3 py-1.5 text-sm font-bold text-white">
+          <span className="absolute top-4 left-4 rounded-full bg-brand-terracotta px-3 py-1.5 text-sm font-semibold text-white">
             Save {discount}%
           </span>
         )}
@@ -46,12 +47,12 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <Badge variant="outline">Origin: {product.origin}</Badge>
         </div>
 
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-brand-green leading-tight">
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-foreground leading-tight">
           {product.name}
         </h1>
 
         <div className="flex items-baseline gap-3">
-          <span className="font-display text-3xl font-bold text-brand-green">
+          <span className="font-display text-3xl font-bold text-foreground">
             {formatPrice(product.price)}
           </span>
           {product.compareAtPrice && (
@@ -80,7 +81,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
         </div>
 
         <div className="flex items-center gap-4 pt-2">
-          <div className="flex items-center rounded-xl border border-brand-border overflow-hidden">
+          <div className="flex items-center rounded-xl border border-brand-border overflow-hidden bg-brand-surface">
             <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
               className="flex h-11 w-11 items-center justify-center hover:bg-brand-cream transition-colors"
@@ -110,22 +111,26 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
         {inCartQty > 0 && (
           <p className="text-sm text-brand-green font-medium">
-            ✓ {inCartQty} already in your cart
+            {inCartQty} already in your cart
           </p>
         )}
 
-        <div className="rounded-2xl bg-brand-cream p-5 space-y-3 mt-2">
+        <div className="rounded-2xl bg-brand-cream/80 p-5 space-y-4 mt-2">
           <div className="flex items-center gap-3 text-sm">
-            <span className="text-lg">🚚</span>
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-green/10 text-brand-green">
+              <IconTruck className="h-4 w-4" />
+            </div>
             <div>
-              <p className="font-medium">Local Columbus Delivery</p>
+              <p className="font-medium text-foreground">Local Columbus Delivery</p>
               <p className="text-brand-muted text-xs">Same-day in Columbus core · Free over $75</p>
             </div>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <span className="text-lg">🏪</span>
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-green/10 text-brand-green">
+              <IconStore className="h-4 w-4" />
+            </div>
             <div>
-              <p className="font-medium">Pickup Available</p>
+              <p className="font-medium text-foreground">Pickup Available</p>
               <p className="text-brand-muted text-xs">2847 Cleveland Ave, Columbus OH</p>
             </div>
           </div>

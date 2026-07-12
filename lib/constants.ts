@@ -23,17 +23,6 @@ export const CATEGORY_LABELS: Record<ProductCategory, string> = {
   household: "Household",
 };
 
-export const CATEGORY_ICONS: Record<ProductCategory, string> = {
-  "grains-flours": "🌾",
-  "spices-seasonings": "🌶️",
-  "sauces-condiments": "🫙",
-  beverages: "🥤",
-  snacks: "🥜",
-  "fresh-produce": "🥬",
-  frozen: "🧊",
-  household: "🏠",
-};
-
 export const DELIVERY_ZONES = [
   {
     id: "columbus-core",

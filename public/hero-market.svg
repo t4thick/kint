@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="400" y1="0" x2="400" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a1510"/>
+      <stop offset="0.45" stop-color="#2a1f14"/>
+      <stop offset="1" stop-color="#0d0c0a"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientTransform="translate(620 280) rotate(90) scale(320)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d4a84b" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#d4a84b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientTransform="translate(180 520) rotate(90) scale(280)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2a6b56" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#2a6b56" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fade" x1="400" y1="700" x2="400" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d0c0a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0d0c0a" stop-opacity="0.92"/>
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="800" height="1200" fill="url(#sky)"/>
+  <rect width="800" height="1200" fill="url(#glow1)"/>
+  <rect width="800" height="1200" fill="url(#glow2)"/>
+  <ellipse cx="400" cy="900" rx="360" ry="220" fill="#1e4d3e" opacity="0.12" filter="url(#blur)"/>
+  <ellipse cx="520" cy="640" rx="140" ry="180" fill="#8b5a2b" opacity="0.18" filter="url(#blur)"/>
+  <ellipse cx="260" cy="700" rx="120" ry="150" fill="#5c3d1e" opacity="0.15" filter="url(#blur)"/>
+  <path d="M120 820 C220 760, 340 800, 400 780 C460 760, 580 800, 680 820 L680 1200 L120 1200 Z" fill="#141210" opacity="0.7"/>
+  <rect x="280" y="560" width="240" height="300" rx="20" fill="#1a1612" opacity="0.55"/>
+  <rect x="300" y="580" width="200" height="240" rx="12" fill="#2a2218" opacity="0.65"/>
+  <circle cx="360" cy="690" r="28" fill="#c2410c" opacity="0.35"/>
+  <circle cx="430" cy="720" r="22" fill="#b8860b" opacity="0.3"/>
+  <circle cx="390" cy="760" r="18" fill="#2a6b56" opacity="0.35"/>
+  <rect width="800" height="1200" fill="url(#fade)"/>
+</svg>

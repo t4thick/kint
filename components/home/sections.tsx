@@ -1,57 +1,82 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { STORE } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-green pattern-kente">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-green via-brand-green to-brand-green-dark opacity-95" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-terracotta/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
+    <section className="relative min-h-[100dvh] md:min-h-[85vh] flex flex-col justify-end overflow-hidden bg-[#0d0c0a]">
+      <Image
+        src="/hero-market.svg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center scale-105"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0d0c0a] via-[#0d0c0a]/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d0c0a]/60 via-transparent to-transparent" />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:py-24 sm:px-6">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-sm text-brand-gold-light mb-6">
-            <span className="h-2 w-2 rounded-full bg-brand-gold animate-pulse" />
-            Now delivering across Columbus, Ohio
+      <div className="absolute top-0 left-0 right-0 z-10 px-5 pt-5 md:pt-8 md:px-8">
+        <Link href="/" className="inline-flex items-center gap-2.5 md:hidden">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white font-display text-lg font-bold border border-white/15">
+            K
           </div>
+        </Link>
+      </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] tracking-tight">
-            {STORE.name}
-          </h1>
-
-          <p className="mt-5 text-lg sm:text-xl text-white/80 leading-relaxed max-w-lg">
-            Shop Africa&apos;s finest groceries like Walmart — browse, order, and we deliver straight to your door in Columbus.
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-32 md:pb-20 pt-24 sm:px-8">
+        <div className="max-w-lg">
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/50 mb-4">
+            {STORE.location}
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Button href="/shop" variant="gold" size="lg">
-              Shop TXT Products
-            </Button>
-            <Button
-              href="/delivery"
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white hover:bg-white hover:text-brand-green"
-            >
-              Delivery Zones
-            </Button>
-          </div>
+          <h1 className="font-display text-[2.75rem] sm:text-5xl lg:text-6xl font-semibold text-white leading-[1.05] tracking-tight">
+            Taste of Home
+          </h1>
 
-          <div className="mt-10 grid grid-cols-3 gap-4 max-w-md">
-            {[
-              { value: "500+", label: "Products" },
-              { value: "Same Day", label: "Delivery" },
-              { value: "4.9★", label: "Rating" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left">
-                <p className="font-display text-xl sm:text-2xl font-bold text-brand-gold-light">
-                  {stat.value}
-                </p>
-                <p className="text-xs text-white/60 mt-0.5">{stat.label}</p>
-              </div>
-            ))}
+          <p className="mt-4 text-base sm:text-lg text-white/65 leading-relaxed max-w-md">
+            Africa&apos;s finest groceries, hand-selected in Columbus and delivered to your door — the market you grew up with, reimagined.
+          </p>
+
+          <div className="mt-8">
+            <Button
+              href="/shop"
+              size="lg"
+              className="rounded-full border border-white/70 bg-transparent text-white hover:bg-white/10 hover:text-white px-8 shadow-none"
+            >
+              Explore
+            </Button>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function EditorialFeature() {
+  return (
+    <section className="bg-[#0d0c0a] text-white">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="max-w-2xl">
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-white/40 mb-3">
+            Featured
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight">
+            The TXT Product
+          </h2>
+          <p className="mt-4 text-white/60 leading-relaxed">
+            Our signature staple — premium African market essentials sourced for quality,
+            freshness, and authentic flavor. Locally stocked on Cleveland Ave and delivered
+            across Columbus.
+          </p>
+          <Button
+            href="/shop/txt-product"
+            size="lg"
+            className="mt-8 rounded-full border border-white/50 bg-transparent text-white hover:bg-white/10 hover:text-white px-8 shadow-none"
+          >
+            Shop Now
+          </Button>
         </div>
       </div>
     </section>
@@ -60,26 +85,25 @@ export function Hero() {
 
 export function CategoryStrip() {
   const categories = [
-    { slug: "grains-flours", icon: "🌾", label: "Grains" },
-    { slug: "spices-seasonings", icon: "🌶️", label: "Spices" },
-    { slug: "sauces-condiments", icon: "🫙", label: "Sauces" },
-    { slug: "snacks", icon: "🥜", label: "Snacks" },
-    { slug: "beverages", icon: "🥤", label: "Drinks" },
-    { slug: "frozen", icon: "🧊", label: "Frozen" },
+    { slug: "grains-flours", label: "Grains" },
+    { slug: "spices-seasonings", label: "Spices" },
+    { slug: "sauces-condiments", label: "Sauces" },
+    { slug: "snacks", label: "Snacks" },
+    { slug: "beverages", label: "Drinks" },
+    { slug: "frozen", label: "Frozen" },
   ];
 
   return (
-    <section className="py-8 border-b border-brand-border bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+    <section className="py-5 bg-background border-b border-brand-border">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none -mx-5 px-5 sm:mx-0 sm:px-0">
           {categories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/shop?category=${cat.slug}`}
-              className="flex shrink-0 flex-col items-center gap-2 rounded-2xl border border-brand-border bg-brand-cream/50 px-5 py-4 hover:border-brand-green hover:bg-brand-green/5 transition-all min-w-[88px]"
+              className="shrink-0 rounded-full border border-brand-border px-4 py-2 text-sm font-medium text-foreground hover:border-foreground/30 hover:bg-brand-cream transition-colors"
             >
-              <span className="text-2xl">{cat.icon}</span>
-              <span className="text-xs font-medium text-brand-green">{cat.label}</span>
+              {cat.label}
             </Link>
           ))}
         </div>
@@ -89,53 +113,28 @@ export function CategoryStrip() {
 }
 
 export function ValueProps() {
-  const props = [
-    {
-      icon: "🛒",
-      title: "Walmart-Style Shopping",
-      desc: "Browse aisles, add to cart, checkout — the familiar flow you know, stocked with African market essentials.",
-    },
-    {
-      icon: "🚚",
-      title: "Local Ohio Delivery",
-      desc: "We bring it to you in Columbus. Same-day delivery in core zones, next-day across greater metro.",
-    },
-    {
-      icon: "✨",
-      title: "TXT Product Quality",
-      desc: "Every item is a TXT Product — hand-selected, locally warehoused, and freshness-guaranteed.",
-    },
-    {
-      icon: "🇺🇸",
-      title: "US-Based, African Soul",
-      desc: "Proudly operating in Columbus, Ohio. Authentic African flavors without leaving the country.",
-    },
-  ];
-
   return (
-    <section className="py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-3xl font-semibold text-brand-green">
-            Why Columbus shops Kintampo
-          </h2>
-          <p className="text-brand-muted mt-2 max-w-lg mx-auto">
-            The African market experience you grew up with — reimagined for modern Ohio living.
-          </p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {props.map((prop) => (
-            <div
-              key={prop.title}
-              className="rounded-2xl border border-brand-border bg-white p-6 hover:shadow-md transition-shadow"
-            >
-              <span className="text-3xl">{prop.icon}</span>
-              <h3 className="font-display text-lg font-semibold text-brand-green mt-4">
-                {prop.title}
-              </h3>
-              <p className="text-sm text-brand-muted mt-2 leading-relaxed">{prop.desc}</p>
-            </div>
-          ))}
+    <section className="py-16 sm:py-20 bg-background">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand-muted mb-3">
+              Why Kintampo
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl font-semibold text-foreground leading-tight">
+              Your neighborhood African market, delivered
+            </h2>
+          </div>
+          <div className="space-y-6 text-brand-muted leading-relaxed">
+            <p>
+              Browse like Walmart, checkout in minutes, and we bring authentic African
+              groceries straight from our Columbus warehouse to your door.
+            </p>
+            <p>
+              Same-day delivery in core zones. Free delivery on orders over $75.
+              Every item is a TXT Product — our guarantee of quality and care.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -144,25 +143,26 @@ export function ValueProps() {
 
 export function CtaBanner() {
   return (
-    <section className="py-12 sm:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-terracotta to-brand-gold p-8 sm:p-12">
-          <div className="absolute inset-0 pattern-kente opacity-30" />
-          <div className="relative max-w-xl">
-            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-white">
-              Try our signature TXT Product today
-            </h2>
-            <p className="text-white/80 mt-3 text-sm sm:text-base">
-              Columbus&apos;s #1 African market staple. Order now and taste the difference.
-            </p>
-            <Button
-              href="/shop/txt-product"
-              size="lg"
-              className="mt-6 bg-white text-brand-green-dark hover:bg-brand-cream"
-            >
-              Shop TXT Product →
-            </Button>
-          </div>
+    <section className="relative overflow-hidden bg-[#0d0c0a]">
+      <div className="absolute inset-0 opacity-30">
+        <Image src="/hero-market.svg" alt="" fill className="object-cover" aria-hidden />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d0c0a] via-[#0d0c0a]/80 to-[#0d0c0a]/60" />
+      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+        <div className="max-w-lg">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-white leading-tight">
+            Ready to shop?
+          </h2>
+          <p className="text-white/55 mt-3 text-sm sm:text-base leading-relaxed">
+            500+ TXT Products waiting at our Cleveland Ave warehouse. Order now for Columbus delivery.
+          </p>
+          <Button
+            href="/shop"
+            size="lg"
+            className="mt-8 rounded-full border border-white/50 bg-transparent text-white hover:bg-white/10 hover:text-white px-8 shadow-none"
+          >
+            Start Shopping
+          </Button>
         </div>
       </div>
     </section>

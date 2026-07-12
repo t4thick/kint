@@ -1,7 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
-  <rect width="400" height="400" fill="#FFFBEB"/>
-  <rect x="140" y="60" width="120" height="280" rx="60" fill="#B45309"/>
-  <ellipse cx="200" cy="80" rx="40" ry="15" fill="#D97706"/>
-  <rect x="155" y="120" width="90" height="180" rx="8" fill="#92400E" opacity="0.5"/>
-  <text x="200" y="370" text-anchor="middle" fill="#92400E" font-family="system-ui,sans-serif" font-size="12" font-weight="600">PALM OIL</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9f8f6"/>
+      <stop offset="1" stop-color="#f0ede8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="175" r="100" fill="#b8860b" opacity="0.08"/>
+  <rect x="115" y="105" width="170" height="190" rx="24" fill="#b8860b" opacity="0.14"/>
+  <rect x="135" y="125" width="130" height="150" rx="16" fill="#b8860b" opacity="0.22"/>
+  <text x="200" y="328" text-anchor="middle" fill="#78716c" font-family="system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="0.06em">PALM OIL</text>
+  
 </svg>

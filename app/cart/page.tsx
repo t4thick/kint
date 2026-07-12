@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { IconCart } from "@/components/ui/icons";
 import { getProductById } from "@/lib/data/products";
 import { useCart } from "@/lib/cart-context";
 import { FREE_DELIVERY_THRESHOLD } from "@/lib/constants";
@@ -26,8 +27,10 @@ export default function CartPage() {
   if (itemCount === 0) {
     return (
       <div className="mx-auto max-w-lg px-4 py-20 text-center">
-        <p className="text-5xl mb-6">🛒</p>
-        <h1 className="font-display text-2xl font-semibold text-brand-green">Your cart is empty</h1>
+        <div className="flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-brand-cream text-brand-muted mb-6">
+          <IconCart className="h-7 w-7" />
+        </div>
+        <h1 className="font-display text-2xl font-semibold text-foreground">Your cart is empty</h1>
         <p className="text-brand-muted mt-2 mb-8">
           Browse our TXT Products and add items to get started.
         </p>
@@ -41,7 +44,7 @@ export default function CartPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12">
       <div className="flex items-center justify-between mb-8">
-        <h1 className="font-display text-3xl font-semibold text-brand-green">
+        <h1 className="font-display text-3xl font-semibold text-foreground">
           Your Cart ({itemCount})
         </h1>
         <button
@@ -57,7 +60,7 @@ export default function CartPage() {
           {cartProducts.map((product) => (
             <div
               key={product!.id}
-              className="flex gap-4 rounded-2xl border border-brand-border bg-white p-4"
+              className="flex gap-4 rounded-2xl bg-brand-surface shadow-card p-4"
             >
               <div className="relative h-20 w-20 shrink-0 rounded-xl overflow-hidden bg-brand-cream">
                 <Image
@@ -76,7 +79,7 @@ export default function CartPage() {
                   >
                     {product!.name}
                   </Link>
-                  <p className="text-sm text-brand-green font-semibold mt-0.5">
+                  <p className="text-sm font-semibold text-foreground mt-0.5">
                     {formatPrice(product!.price)}
                   </p>
                 </div>
@@ -112,8 +115,8 @@ export default function CartPage() {
         </div>
 
         <div className="lg:col-span-1">
-          <div className="sticky top-24 rounded-2xl border border-brand-border bg-white p-6 space-y-4">
-            <h2 className="font-display text-lg font-semibold text-brand-green">Order Summary</h2>
+          <div className="sticky top-24 rounded-2xl bg-brand-surface shadow-card p-6 space-y-4">
+            <h2 className="font-display text-lg font-semibold text-foreground">Order Summary</h2>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-brand-muted">Subtotal</span>
@@ -135,7 +138,7 @@ export default function CartPage() {
               </div>
               <div className="border-t border-brand-border pt-2 flex justify-between font-semibold text-base">
                 <span>Total</span>
-                <span className="text-brand-green">{formatPrice(totals.total)}</span>
+                <span>{formatPrice(totals.total)}</span>
               </div>
             </div>
 

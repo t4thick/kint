@@ -1,20 +1,23 @@
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+
+type BadgeVariant = "default" | "gold" | "green" | "red" | "outline";
 
 interface BadgeProps {
-  children: React.ReactNode;
-  variant?: "default" | "gold" | "green" | "red" | "outline";
+  variant?: BadgeVariant;
+  children: ReactNode;
   className?: string;
 }
 
-const variants = {
-  default: "bg-brand-cream text-brand-green-dark",
-  gold: "bg-brand-gold/20 text-brand-gold border border-brand-gold/30",
+const variants: Record<BadgeVariant, string> = {
+  default: "bg-brand-cream text-foreground",
+  gold: "bg-brand-gold/15 text-brand-gold",
   green: "bg-brand-green/10 text-brand-green",
   red: "bg-red-50 text-red-700",
-  outline: "border border-brand-border text-brand-muted",
+  outline: "border border-brand-border text-brand-muted bg-transparent",
 };
 
-export function Badge({ children, variant = "default", className }: BadgeProps) {
+export function Badge({ variant = "default", children, className }: BadgeProps) {
   return (
     <span
       className={cn(
