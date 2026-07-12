@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
-  <rect width="400" height="400" fill="#FEF2F2"/>
-  <rect x="120" y="90" width="160" height="220" rx="16" fill="#7F1D1D"/>
-  <ellipse cx="200" cy="130" rx="50" ry="20" fill="#DC2626"/>
-  <text x="200" y="230" text-anchor="middle" fill="#FCA5A5" font-family="system-ui,sans-serif" font-size="18" font-weight="bold">SHITO</text>
-  <text x="200" y="260" text-anchor="middle" fill="#FECACA" font-family="system-ui,sans-serif" font-size="11">HOT SAUCE</text>
-  <text x="200" y="50" text-anchor="middle" font-size="28">=%</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9f8f6"/>
+      <stop offset="1" stop-color="#f0ede8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="175" r="100" fill="#1e4d3e" opacity="0.08"/>
+  <rect x="115" y="105" width="170" height="190" rx="24" fill="#1e4d3e" opacity="0.14"/>
+  <rect x="135" y="125" width="130" height="150" rx="16" fill="#1e4d3e" opacity="0.22"/>
+  <text x="200" y="328" text-anchor="middle" fill="#78716c" font-family="system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="0.06em">SHITO SAUCE</text>
+  
 </svg>

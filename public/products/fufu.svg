@@ -1,7 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
-  <rect width="400" height="400" fill="#FAFAF5"/>
-  <rect x="100" y="120" width="200" height="180" rx="8" fill="#F5F5DC" stroke="#D4D4AA" stroke-width="2"/>
-  <text x="200" y="200" text-anchor="middle" fill="#78716C" font-family="system-ui,sans-serif" font-size="20" font-weight="bold">FUFU</text>
-  <text x="200" y="230" text-anchor="middle" fill="#A8A29E" font-family="system-ui,sans-serif" font-size="12">INSTANT MIX</text>
-  <text x="200" y="70" text-anchor="middle" font-size="32">>c</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9f8f6"/>
+      <stop offset="1" stop-color="#f0ede8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="175" r="100" fill="#78716c" opacity="0.08"/>
+  <rect x="115" y="105" width="170" height="190" rx="24" fill="#78716c" opacity="0.14"/>
+  <rect x="135" y="125" width="130" height="150" rx="16" fill="#78716c" opacity="0.22"/>
+  <text x="200" y="328" text-anchor="middle" fill="#78716c" font-family="system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="0.06em">FUFU MIX</text>
+  
 </svg>

@@ -71,7 +71,7 @@ export function MobileNav() {
               {tab.icon(active)}
               <span className="text-[10px] font-medium">{tab.label}</span>
               {tab.href === "/cart" && itemCount > 0 && (
-                <span className="absolute top-0 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-terracotta text-[8px] font-bold text-white">
+                <span className="absolute top-0 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-green text-[8px] font-bold text-white">
                   {itemCount}
                 </span>
               )}

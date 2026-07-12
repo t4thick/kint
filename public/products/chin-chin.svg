@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
-  <rect width="400" height="400" fill="#FFFBEB"/>
-  <rect x="80" y="150" width="240" height="140" rx="12" fill="#D4A017"/>
-  <rect x="100" y="170" width="60" height="40" rx="4" fill="#FDE68A"/>
-  <rect x="170" y="170" width="60" height="40" rx="4" fill="#FBBF24"/>
-  <rect x="240" y="170" width="60" height="40" rx="4" fill="#F59E0B"/>
-  <text x="200" y="250" text-anchor="middle" fill="#78350F" font-family="system-ui,sans-serif" font-size="16" font-weight="bold">CHIN CHIN</text>
-  <text x="200" y="80" text-anchor="middle" font-size="32"><j</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f9f8f6"/>
+      <stop offset="1" stop-color="#f0ede8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="175" r="100" fill="#c2410c" opacity="0.08"/>
+  <rect x="115" y="105" width="170" height="190" rx="24" fill="#c2410c" opacity="0.14"/>
+  <rect x="135" y="125" width="130" height="150" rx="16" fill="#c2410c" opacity="0.22"/>
+  <text x="200" y="328" text-anchor="middle" fill="#78716c" font-family="system-ui, sans-serif" font-size="13" font-weight="500" letter-spacing="0.06em">CHIN CHIN</text>
+  
 </svg>

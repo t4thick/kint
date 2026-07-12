@@ -30,11 +30,10 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-brand-green pattern-kente px-4">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-green to-brand-green-dark opacity-95" />
-      <div className="relative w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-brand-green px-4">
+      <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-gold text-brand-green-dark font-display text-2xl font-bold mb-4">
+          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-green font-display text-2xl font-bold mb-4">
             K
           </div>
           <h1 className="font-display text-2xl font-semibold text-white">{STORE.name}</h1>
@@ -43,7 +42,7 @@ export default function AdminLoginPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl bg-white p-8 shadow-2xl space-y-5"
+          className="rounded-2xl bg-white p-8 shadow-card-hover space-y-5"
         >
           <Input
             label="Email"
@@ -66,7 +65,7 @@ export default function AdminLoginPage() {
           </Button>
 
           <div className="rounded-xl bg-brand-cream p-4 text-xs text-brand-muted space-y-1">
-            <p className="font-medium text-brand-green">Demo Credentials</p>
+            <p className="font-medium text-foreground">Demo Credentials</p>
             <p>Email: admin@kintampomarket.com</p>
             <p>Password: kintampo2026</p>
           </div>
